@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/menu.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        <div class="topnav" id="myTopnav">
+            <a class="menu-item" href="@Url.Action("Index","Employee")">Employee</a>
+            <a class="menu-item" href="@Url.Action("Index","Cars")">Cars</a>
+            <a class="menu-item" href="@Url.Action("Index","CarDetails")">Car Details</a>
+            <a href="javascript:void(0);" class="icon" onclick="barClick()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Asp.Net MVC CRUD Operations</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/menu.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

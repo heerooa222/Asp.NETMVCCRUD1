@@ -1,0 +1,39 @@
+﻿@model Asp.NETMVCCRUD.Models.CarDetail
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("AddOrEdit", "CarDetails", FormMethod.Post, new {onsubmit = "return SubmitForm(this)" }))
+{
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        @Html.LabelFor(model => model.CarId, new { @class = "control-label" })
+        @Html.EditorFor(model => model.CarId, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CarId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PlateNumber, new { @class = "control-label" })
+        @Html.EditorFor(model => model.PlateNumber, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PlateNumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Model, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Model)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Colour, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Colour, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Colour)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Description)
+    </div>
+    
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary"  />
+        <input type="reset" value="Reset" class="btn" />
+    </div>
+}
